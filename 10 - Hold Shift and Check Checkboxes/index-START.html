@@ -50,12 +50,12 @@
       border-left: 1px solid #D1E2FF;
     }
   </style>
-   <!--
-   The following is a common layout you would see in an email client.
+    <!--
+    The following is a common layout you would see in an email client.
 
-   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+    When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
 
-  -->
+    -->
   <div class="inbox">
     <div class="item">
       <input type="checkbox">
@@ -96,6 +96,37 @@
   </div>
 
 <script>
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+  // console.log(checkboxes);
+
+  let lastChecked;
+  function handleCheck(e) {
+    // console.log(e);
+    // shift key를 눌렀는지 체크
+    // 그리고 체크 하고있는지 확인
+    let inBetween = false;
+    console.log(`this.checked: ${this.checked}`);
+    if(e.shiftKey && this.checked) {
+      // 하고싶은 것을 해라.
+      // 모든 체크박스를 반복하다.
+      console.log(`e.shifKey: ${e.shiftKey}`);
+      checkboxes.forEach(checkbox => {
+        console.log(`checkbox: ${checkbox}`);
+        if(checkbox === this || checkbox === lastChecked) {
+          debugger
+          inBetween = !inBetween;
+          console.log('starting to check them inbetween');
+        }
+        if(inBetween){
+          debugger
+          checkbox.checked = true;
+        }
+      })
+    }
+    lastChecked = this;
+    console.dir(`lastChecked ${lastChecked}`)
+  }
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck))
 </script>
 </body>
 </html>
