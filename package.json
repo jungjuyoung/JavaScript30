@@ -2,6 +2,12 @@
   "name": "JavaScript30",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/remote-develop-study/JavaScript30.git",
+  "author": "DoonDoony <cream.doondoon@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  },
   "scripts": {
     "ch30": "browser-sync start --server --browser \"google chrome\" --files=\"30 - Whack A Mole/*\" --startPath=\"30 - Whack A Mole/index-START.html\"",
     "ch29": "browser-sync start --server --browser \"google chrome\" --files=\"29 - Countdown Timer/*\" --startPath=\"29 - Countdown Timer/index-START.html\"",
@@ -23,7 +29,7 @@
     "ch13": "browser-sync start --server --browser \"google chrome\" --files=\"13 - Slide in on Scroll/*\" --startPath=\"13 - Slide in on Scroll/index-START.html\"",
     "ch12": "browser-sync start --server --browser \"google chrome\" --files=\"12 - Key Sequence Detection/*\" --startPath=\"12 - Key Sequence Detection/index-START.html\"",
     "ch11": "browser-sync start --server --browser \"google chrome\" --files=\"11 - Custom Video Player/*\" --startPath=\"11 - Custom Video Player/index.html\"",
-    "ch10": "browser-sync start --server --browser \"google chrome\" --files=\"10 - Hold Shift and Check Checkbo/*\" --startPath=\"10 - Hold Shift and Check Checkboxes/index-START.html\"",
+    "ch10": "browser-sync start --server --browser \"google chrome\" --files=\"10 - Hold Shift and Check Checkboxes/*\" --startPath=\"10 - Hold Shift and Check Checkboxes/index-START.html\"",
     "ch9": "browser-sync start --server --browser \"google chrome\" --files=\"09 - Dev Tools Domination/*\" --startPath=\"09 - Dev Tools Domination/index-START.html\"",
     "ch8": "browser-sync start --server --browser \"google chrome\" --files=\"08 - Fun with HTML5 Canvas/*\" --startPath=\"08 - Fun with HTML5 Canvas/index-START.html\"",
     "ch7": "browser-sync start --server --browser \"google chrome\" --files=\"07 - Array Cardio Day 2/*\" --startPath=\"07 - Array Cardio Day 2/index-START.html\"",
@@ -34,14 +40,7 @@
     "ch2": "browser-sync start --server --browser \"google chrome\" --files=\"02 - JS and CSS Clock/*\" --startPath=\"02 - JS and CSS Clock/index-START.html\"",
     "ch1": "browser-sync start --server --browser \"google chrome\" --files=\"01 - JavaScript Drum Kit/*\" --startPath=\"01 - JavaScript Drum Kit/index-START.html\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jungjuyoung/JavaScript30.git"
-  },
-  "keywords": [],
-  "author": "jungjuyoung <nwwn1004@naver.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.26.3"
+  "dependencies": {
+    "prettier": "^1.16.4"
   }
 }
