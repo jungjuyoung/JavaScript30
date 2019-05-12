@@ -15,6 +15,27 @@
   </div>
 
 <script>
+  const speed = document.querySelector('.speed');
+  const bar = speed.querySelector('.speed-bar');
+  const video = document.querySelector('.flex');
+
+  function hadleMove(e){
+    // console.log(e);
+    const y = e.pageY - this.offsetTop;
+    const perccent = y / this.offsetHeight;
+    const min = 0.4;
+    const max = 4;
+
+    const height = Math.round(perccent * 100) + '%';
+    const playbackRate = perccent * (max - min) + min;
+    bar.textContent = playbackRate.toFixed(2) + 'x';
+    bar.style.height = height;
+    // console.log(playbackRate);
+    // console.log(height);
+    video.playbackRate = playbackRate;
+  }
+
+  speed.addEventListener('mousemove', hadleMove);
 </script>
 </body>
 </html>
