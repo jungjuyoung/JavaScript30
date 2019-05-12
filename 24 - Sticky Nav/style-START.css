@@ -79,7 +79,7 @@ nav li {
 }
 
 li.logo {
-  width: 0;
+  max-width: 0;
   overflow: hidden;
   background: white;
   transition: all .5s;
