@@ -41,8 +41,36 @@
 </style>
 
 <button></button>
+<a href="#">a링크</a>
 <script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
+  const atag = document.querySelector('a');
+  function logText(e){
+    // e.stopPropagation(); // stop bubbling! 
+    console.log(this.classList.value);
+    // console.log(this);
+  }
+  
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false, // bubbling
+    // capture: true, // capturing
+    once: true
+  }));
 
+  // a 에도 적용가능한가함!! 애니메이션 적용할때 유용할듯!
+  button.addEventListener('click', () => {
+    console.log('click!!!');
+  }, {
+    once: true
+  });
+
+  atag.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('click!!!');
+  }, {
+    once: true
+  });
 </script>
 </body>
 </html>
